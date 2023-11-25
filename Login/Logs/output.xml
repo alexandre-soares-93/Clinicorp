@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on darwin)" generated="20231125 19:40:49.041" rpa="false" schemaversion="4">
+<suite id="s1" name="Login" source="/Users/alexandresoaresdeoliveira/Documents/Clinicorp/Login/Test/Login.robot">
+<test id="s1-t1" name="Cenario: Login com usuario e senha validos" line="8">
+<kw name="Abrir Clinicorp" library="environment" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231125 19:40:49.122" level="INFO">Opening browser 'Chrome' to base url 'https://sistema.clinicorp.com/login/'.</msg>
+<status status="PASS" starttime="20231125 19:40:49.122" endtime="20231125 19:40:53.401"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231125 19:40:53.402" endtime="20231125 19:40:53.811"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231125 19:40:53.811" endtime="20231125 19:40:53.811"/>
+</kw>
+<status status="PASS" starttime="20231125 19:40:49.121" endtime="20231125 19:40:53.811"/>
+</kw>
+<kw name="Dado que desejo acessar a clinicorp" library="LoginResource">
+<kw name="Valida Tela Login" library="LoginPage">
+<arg>${telaLogin}</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>xpath://div[@class="login__welcome-message"]//p</arg>
+<arg>timeout=01:30</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231125 19:40:53.812" endtime="20231125 19:40:56.866"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath://div[@class="login__welcome-message"]//p</arg>
+<arg>${telaLogin}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231125 19:40:56.868" level="INFO">Verifying element 'xpath://div[@class="login__welcome-message"]//p' contains exact text 'Seja bem-vindo(a)'.</msg>
+<status status="PASS" starttime="20231125 19:40:56.866" endtime="20231125 19:40:58.902"/>
+</kw>
+<status status="PASS" starttime="20231125 19:40:53.812" endtime="20231125 19:40:58.902"/>
+</kw>
+<status status="PASS" starttime="20231125 19:40:53.811" endtime="20231125 19:40:58.902"/>
+</kw>
+<kw name="Quando digitar usuario e senha validos" library="LoginResource">
+<kw name="Digita Usuario" library="LoginPage">
+<arg>${usuario}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231125 19:40:58.906" level="INFO">Typing text 'asoaresdeoliveira977@zodontobox' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20231125 19:40:58.904" endtime="20231125 19:41:02.130"/>
+</kw>
+<status status="PASS" starttime="20231125 19:40:58.904" endtime="20231125 19:41:02.130"/>
+</kw>
+<kw name="Digita Senha" library="LoginPage">
+<arg>${senha}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231125 19:41:02.132" level="INFO">Typing text '931231Abc!' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20231125 19:41:02.131" endtime="20231125 19:41:05.232"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:02.130" endtime="20231125 19:41:05.233"/>
+</kw>
+<kw name="Btn Entrar" library="LoginPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://div[@class="full-container"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231125 19:41:05.233" level="INFO">Clicking element 'xpath://div[@class="full-container"]'.</msg>
+<status status="PASS" starttime="20231125 19:41:05.233" endtime="20231125 19:41:07.293"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:05.233" endtime="20231125 19:41:07.294"/>
+</kw>
+<status status="PASS" starttime="20231125 19:40:58.903" endtime="20231125 19:41:07.294"/>
+</kw>
+<kw name="Entao será exibida a home do sistema" library="LoginResource">
+<kw name="Valida Usuario Logado" library="LoginPage">
+<arg>${nomeUsuario}</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>xpath://div[@class="header__user-infos--items"]//span</arg>
+<arg>timeout=01:30</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231125 19:41:07.294" endtime="20231125 19:41:12.771"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath://div[@class="header__user-infos--items"]//span</arg>
+<arg>${nomeUsuario}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231125 19:41:12.772" level="INFO">Verifying element 'xpath://div[@class="header__user-infos--items"]//span' contains exact text 'Crowdtest 40'.</msg>
+<status status="PASS" starttime="20231125 19:41:12.771" endtime="20231125 19:41:14.801"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:07.294" endtime="20231125 19:41:14.802"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:07.294" endtime="20231125 19:41:14.802"/>
+</kw>
+<kw name="Fechar Clinicorp" library="environment" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231125 19:41:14.802" endtime="20231125 19:41:15.896"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:14.802" endtime="20231125 19:41:15.896"/>
+</kw>
+<status status="PASS" starttime="20231125 19:40:49.121" endtime="20231125 19:41:15.896"/>
+</test>
+<test id="s1-t2" name="Cenario: Login com usuario invalido" line="13">
+<kw name="Abrir Clinicorp" library="environment" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231125 19:41:15.896" level="INFO">Opening browser 'Chrome' to base url 'https://sistema.clinicorp.com/login/'.</msg>
+<status status="PASS" starttime="20231125 19:41:15.896" endtime="20231125 19:41:21.367"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231125 19:41:21.368" endtime="20231125 19:41:22.777"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231125 19:41:22.777" endtime="20231125 19:41:22.778"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:15.896" endtime="20231125 19:41:22.778"/>
+</kw>
+<kw name="Dado que desejo acessar a clinicorp" library="LoginResource">
+<kw name="Valida Tela Login" library="LoginPage">
+<arg>${telaLogin}</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>xpath://div[@class="login__welcome-message"]//p</arg>
+<arg>timeout=01:30</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231125 19:41:22.779" endtime="20231125 19:41:25.828"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath://div[@class="login__welcome-message"]//p</arg>
+<arg>${telaLogin}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231125 19:41:25.829" level="INFO">Verifying element 'xpath://div[@class="login__welcome-message"]//p' contains exact text 'Seja bem-vindo(a)'.</msg>
+<status status="PASS" starttime="20231125 19:41:25.828" endtime="20231125 19:41:27.864"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:22.778" endtime="20231125 19:41:27.864"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:22.778" endtime="20231125 19:41:27.864"/>
+</kw>
+<kw name="Quando digitar usuario invalido" library="LoginResource">
+<kw name="Fazer Login" library="environment">
+<arg>${userErro}</arg>
+<arg>${senha}</arg>
+<kw name="Digita Usuario" library="LoginPage">
+<arg>${usuario}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231125 19:41:27.867" level="INFO">Typing text 'erronoteste@fail.com' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20231125 19:41:27.866" endtime="20231125 19:41:31.042"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:27.866" endtime="20231125 19:41:31.042"/>
+</kw>
+<kw name="Digita Senha" library="LoginPage">
+<arg>${senha}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231125 19:41:31.044" level="INFO">Typing text '931231Abc!' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20231125 19:41:31.043" endtime="20231125 19:41:34.148"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:31.042" endtime="20231125 19:41:34.148"/>
+</kw>
+<kw name="Btn Entrar" library="LoginPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://div[@class="full-container"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231125 19:41:34.148" level="INFO">Clicking element 'xpath://div[@class="full-container"]'.</msg>
+<status status="PASS" starttime="20231125 19:41:34.148" endtime="20231125 19:41:36.206"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:34.148" endtime="20231125 19:41:36.207"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:27.865" endtime="20231125 19:41:36.207"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:27.865" endtime="20231125 19:41:36.207"/>
+</kw>
+<kw name="Entao será exibido a mensagem de dados invalidos" library="LoginResource">
+<kw name="Valida Erro Login" library="LoginPage">
+<arg>${erroLogin}</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>xpath://div[@class="login__error-container"]</arg>
+<arg>timeout=01:30</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231125 19:41:36.208" endtime="20231125 19:41:39.259"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath://div[@class="login__error-container"]</arg>
+<arg>${erroLogin}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231125 19:41:39.260" level="INFO">Verifying element 'xpath://div[@class="login__error-container"]' contains exact text 'Usuário/Senha inválidos'.</msg>
+<status status="PASS" starttime="20231125 19:41:39.259" endtime="20231125 19:41:41.284"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:36.208" endtime="20231125 19:41:41.284"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:36.207" endtime="20231125 19:41:41.284"/>
+</kw>
+<kw name="Fechar Clinicorp" library="environment" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231125 19:41:41.285" endtime="20231125 19:41:42.344"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:41.284" endtime="20231125 19:41:42.344"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:15.896" endtime="20231125 19:41:42.344"/>
+</test>
+<test id="s1-t3" name="Cenario: Login com senha invalida" line="18">
+<kw name="Abrir Clinicorp" library="environment" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231125 19:41:42.345" level="INFO">Opening browser 'Chrome' to base url 'https://sistema.clinicorp.com/login/'.</msg>
+<status status="PASS" starttime="20231125 19:41:42.345" endtime="20231125 19:41:47.566"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231125 19:41:47.566" endtime="20231125 19:41:48.978"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231125 19:41:48.978" endtime="20231125 19:41:48.978"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:42.345" endtime="20231125 19:41:48.978"/>
+</kw>
+<kw name="Dado que desejo acessar a clinicorp" library="LoginResource">
+<kw name="Valida Tela Login" library="LoginPage">
+<arg>${telaLogin}</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>xpath://div[@class="login__welcome-message"]//p</arg>
+<arg>timeout=01:30</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231125 19:41:48.980" endtime="20231125 19:41:52.024"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath://div[@class="login__welcome-message"]//p</arg>
+<arg>${telaLogin}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231125 19:41:52.025" level="INFO">Verifying element 'xpath://div[@class="login__welcome-message"]//p' contains exact text 'Seja bem-vindo(a)'.</msg>
+<status status="PASS" starttime="20231125 19:41:52.024" endtime="20231125 19:41:54.059"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:48.979" endtime="20231125 19:41:54.059"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:48.979" endtime="20231125 19:41:54.059"/>
+</kw>
+<kw name="Quando digitar senha invalida" library="LoginResource">
+<kw name="Fazer Login" library="environment">
+<arg>${usuario}</arg>
+<arg>${passErro}</arg>
+<kw name="Digita Usuario" library="LoginPage">
+<arg>${usuario}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231125 19:41:54.062" level="INFO">Typing text 'asoaresdeoliveira977@zodontobox' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20231125 19:41:54.061" endtime="20231125 19:41:57.256"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:54.061" endtime="20231125 19:41:57.256"/>
+</kw>
+<kw name="Digita Senha" library="LoginPage">
+<arg>${senha}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231125 19:41:57.257" level="INFO">Typing text 'Erro123!' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20231125 19:41:57.256" endtime="20231125 19:42:00.360"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:57.256" endtime="20231125 19:42:00.360"/>
+</kw>
+<kw name="Btn Entrar" library="LoginPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://div[@class="full-container"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231125 19:42:00.360" level="INFO">Clicking element 'xpath://div[@class="full-container"]'.</msg>
+<status status="PASS" starttime="20231125 19:42:00.360" endtime="20231125 19:42:02.414"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:00.360" endtime="20231125 19:42:02.414"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:54.060" endtime="20231125 19:42:02.414"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:54.060" endtime="20231125 19:42:02.414"/>
+</kw>
+<kw name="Entao será exibido a mensagem de dados invalidos" library="LoginResource">
+<kw name="Valida Erro Login" library="LoginPage">
+<arg>${erroLogin}</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>xpath://div[@class="login__error-container"]</arg>
+<arg>timeout=01:30</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231125 19:42:02.415" endtime="20231125 19:42:05.455"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath://div[@class="login__error-container"]</arg>
+<arg>${erroLogin}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231125 19:42:05.457" level="INFO">Verifying element 'xpath://div[@class="login__error-container"]' contains exact text 'Usuário/Senha inválidos'.</msg>
+<status status="PASS" starttime="20231125 19:42:05.455" endtime="20231125 19:42:07.483"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:02.414" endtime="20231125 19:42:07.483"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:02.414" endtime="20231125 19:42:07.483"/>
+</kw>
+<kw name="Fechar Clinicorp" library="environment" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231125 19:42:07.484" endtime="20231125 19:42:08.549"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:07.483" endtime="20231125 19:42:08.549"/>
+</kw>
+<status status="PASS" starttime="20231125 19:41:42.345" endtime="20231125 19:42:08.549"/>
+</test>
+<test id="s1-t4" name="Cenario: Login com usuario e senha invalida" line="23">
+<kw name="Abrir Clinicorp" library="environment" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231125 19:42:08.550" level="INFO">Opening browser 'Chrome' to base url 'https://sistema.clinicorp.com/login/'.</msg>
+<status status="PASS" starttime="20231125 19:42:08.549" endtime="20231125 19:42:13.859"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231125 19:42:13.859" endtime="20231125 19:42:15.271"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231125 19:42:15.272" endtime="20231125 19:42:15.272"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:08.549" endtime="20231125 19:42:15.272"/>
+</kw>
+<kw name="Dado que desejo acessar a clinicorp" library="LoginResource">
+<kw name="Valida Tela Login" library="LoginPage">
+<arg>${telaLogin}</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>xpath://div[@class="login__welcome-message"]//p</arg>
+<arg>timeout=01:30</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231125 19:42:15.273" endtime="20231125 19:42:18.328"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath://div[@class="login__welcome-message"]//p</arg>
+<arg>${telaLogin}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231125 19:42:18.330" level="INFO">Verifying element 'xpath://div[@class="login__welcome-message"]//p' contains exact text 'Seja bem-vindo(a)'.</msg>
+<status status="PASS" starttime="20231125 19:42:18.329" endtime="20231125 19:42:20.361"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:15.273" endtime="20231125 19:42:20.361"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:15.273" endtime="20231125 19:42:20.361"/>
+</kw>
+<kw name="Quando digitar usuario e senha invalidos" library="LoginResource">
+<kw name="Fazer Login" library="environment">
+<arg>${userErro}</arg>
+<arg>${passErro}</arg>
+<kw name="Digita Usuario" library="LoginPage">
+<arg>${usuario}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231125 19:42:20.363" level="INFO">Typing text 'erronoteste@fail.com' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20231125 19:42:20.363" endtime="20231125 19:42:23.550"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:20.362" endtime="20231125 19:42:23.550"/>
+</kw>
+<kw name="Digita Senha" library="LoginPage">
+<arg>${senha}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231125 19:42:23.550" level="INFO">Typing text 'Erro123!' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20231125 19:42:23.550" endtime="20231125 19:42:26.638"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:23.550" endtime="20231125 19:42:26.638"/>
+</kw>
+<kw name="Btn Entrar" library="LoginPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://div[@class="full-container"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231125 19:42:26.638" level="INFO">Clicking element 'xpath://div[@class="full-container"]'.</msg>
+<status status="PASS" starttime="20231125 19:42:26.638" endtime="20231125 19:42:28.680"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:26.638" endtime="20231125 19:42:28.680"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:20.362" endtime="20231125 19:42:28.680"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:20.361" endtime="20231125 19:42:28.680"/>
+</kw>
+<kw name="Entao será exibido a mensagem de dados invalidos" library="LoginResource">
+<kw name="Valida Erro Login" library="LoginPage">
+<arg>${erroLogin}</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>xpath://div[@class="login__error-container"]</arg>
+<arg>timeout=01:30</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231125 19:42:28.681" endtime="20231125 19:42:31.723"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath://div[@class="login__error-container"]</arg>
+<arg>${erroLogin}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231125 19:42:31.725" level="INFO">Verifying element 'xpath://div[@class="login__error-container"]' contains exact text 'Usuário/Senha inválidos'.</msg>
+<status status="PASS" starttime="20231125 19:42:31.723" endtime="20231125 19:42:33.751"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:28.681" endtime="20231125 19:42:33.751"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:28.680" endtime="20231125 19:42:33.751"/>
+</kw>
+<kw name="Fechar Clinicorp" library="environment" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231125 19:42:33.752" endtime="20231125 19:42:34.817"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:33.752" endtime="20231125 19:42:34.817"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:08.549" endtime="20231125 19:42:34.817"/>
+</test>
+<test id="s1-t5" name="Cenario: Reset de senha com envio por Email" line="28">
+<kw name="Abrir Clinicorp" library="environment" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231125 19:42:34.818" level="INFO">Opening browser 'Chrome' to base url 'https://sistema.clinicorp.com/login/'.</msg>
+<status status="PASS" starttime="20231125 19:42:34.818" endtime="20231125 19:42:40.152"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231125 19:42:40.153" endtime="20231125 19:42:41.566"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231125 19:42:41.566" endtime="20231125 19:42:41.567"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:34.818" endtime="20231125 19:42:41.567"/>
+</kw>
+<kw name="Dado que esqueci minha senha" library="LoginResource">
+<kw name="Valida Tela Login" library="LoginPage">
+<arg>${telaLogin}</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>xpath://div[@class="login__welcome-message"]//p</arg>
+<arg>timeout=01:30</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231125 19:42:41.568" endtime="20231125 19:42:44.627"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath://div[@class="login__welcome-message"]//p</arg>
+<arg>${telaLogin}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231125 19:42:44.628" level="INFO">Verifying element 'xpath://div[@class="login__welcome-message"]//p' contains exact text 'Seja bem-vindo(a)'.</msg>
+<status status="PASS" starttime="20231125 19:42:44.627" endtime="20231125 19:42:46.666"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:41.567" endtime="20231125 19:42:46.667"/>
+</kw>
+<kw name="Btn Esqueci Minha Senha" library="ResetPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://a[@class="login__link-button"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231125 19:42:46.668" level="INFO">Clicking element 'xpath://a[@class="login__link-button"]'.</msg>
+<status status="PASS" starttime="20231125 19:42:46.667" endtime="20231125 19:42:48.742"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:46.667" endtime="20231125 19:42:48.742"/>
+</kw>
+<kw name="Valida Tela Reset De Senha" library="ResetPage">
+<arg>${telaReset}</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>xpath://h2[@class="fadeIn"]</arg>
+<arg>timeout=01:30</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231125 19:42:48.742" endtime="20231125 19:42:51.788"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath://h2[@class="fadeIn"]</arg>
+<arg>${ResetSenha}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231125 19:42:51.790" level="INFO">Verifying element 'xpath://h2[@class="fadeIn"]' contains exact text 'Recuperação de senha'.</msg>
+<status status="PASS" starttime="20231125 19:42:51.788" endtime="20231125 19:42:53.816"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:48.742" endtime="20231125 19:42:53.816"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:41.567" endtime="20231125 19:42:53.816"/>
+</kw>
+<kw name="Quando informar meu usuario" library="LoginResource">
+<kw name="Digita Usuario Reset" library="ResetPage">
+<arg>${userReset}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:recovery_user</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231125 19:42:53.818" level="INFO">Typing text 'teste' into text field 'id:recovery_user'.</msg>
+<status status="PASS" starttime="20231125 19:42:53.817" endtime="20231125 19:42:56.974"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:53.817" endtime="20231125 19:42:56.974"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:53.816" endtime="20231125 19:42:56.975"/>
+</kw>
+<kw name="E selecionar envio via Email" library="LoginResource">
+<kw name="Envia Senha Por Email" library="ResetPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:recoveryType_0-label</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231125 19:42:56.977" level="INFO">Clicking element 'id:recoveryType_0-label'.</msg>
+<status status="PASS" starttime="20231125 19:42:56.975" endtime="20231125 19:42:59.029"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:56.975" endtime="20231125 19:42:59.029"/>
+</kw>
+<kw name="Btn Enviar" library="ResetPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://div[@class="full-container"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231125 19:42:59.031" level="INFO">Clicking element 'xpath://div[@class="full-container"]'.</msg>
+<status status="PASS" starttime="20231125 19:42:59.030" endtime="20231125 19:43:01.086"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:59.030" endtime="20231125 19:43:01.087"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:56.975" endtime="20231125 19:43:01.087"/>
+</kw>
+<kw name="Entao nova senha sera enviada" library="LoginResource">
+<kw name="Valida Envio senha" library="ResetPage">
+<arg>${envioSenha}</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>xpath://p[@class]</arg>
+<arg>timeout=01:30</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231125 19:43:01.087" endtime="20231125 19:43:04.120"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath://p[@class]</arg>
+<arg>${envioSenha}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231125 19:43:04.122" level="INFO">Verifying element 'xpath://p[@class]' contains exact text 'Nova senha enviada, verifique se recebeu o E-mail/SMS!'.</msg>
+<status status="PASS" starttime="20231125 19:43:04.121" endtime="20231125 19:43:06.147"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:01.087" endtime="20231125 19:43:06.147"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:01.087" endtime="20231125 19:43:06.147"/>
+</kw>
+<kw name="Fechar Clinicorp" library="environment" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231125 19:43:06.148" endtime="20231125 19:43:07.214"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:06.148" endtime="20231125 19:43:07.214"/>
+</kw>
+<status status="PASS" starttime="20231125 19:42:34.817" endtime="20231125 19:43:07.215"/>
+</test>
+<test id="s1-t6" name="Cenario: Reset de senha com Envio por SMS" line="34">
+<kw name="Abrir Clinicorp" library="environment" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231125 19:43:07.218" level="INFO">Opening browser 'Chrome' to base url 'https://sistema.clinicorp.com/login/'.</msg>
+<status status="PASS" starttime="20231125 19:43:07.217" endtime="20231125 19:43:12.480"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231125 19:43:12.480" endtime="20231125 19:43:13.890"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231125 19:43:13.890" endtime="20231125 19:43:13.891"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:07.216" endtime="20231125 19:43:13.891"/>
+</kw>
+<kw name="Dado que esqueci minha senha" library="LoginResource">
+<kw name="Valida Tela Login" library="LoginPage">
+<arg>${telaLogin}</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>xpath://div[@class="login__welcome-message"]//p</arg>
+<arg>timeout=01:30</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231125 19:43:13.892" endtime="20231125 19:43:16.942"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath://div[@class="login__welcome-message"]//p</arg>
+<arg>${telaLogin}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231125 19:43:16.944" level="INFO">Verifying element 'xpath://div[@class="login__welcome-message"]//p' contains exact text 'Seja bem-vindo(a)'.</msg>
+<status status="PASS" starttime="20231125 19:43:16.943" endtime="20231125 19:43:18.970"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:13.892" endtime="20231125 19:43:18.970"/>
+</kw>
+<kw name="Btn Esqueci Minha Senha" library="ResetPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://a[@class="login__link-button"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231125 19:43:18.971" level="INFO">Clicking element 'xpath://a[@class="login__link-button"]'.</msg>
+<status status="PASS" starttime="20231125 19:43:18.970" endtime="20231125 19:43:21.023"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:18.970" endtime="20231125 19:43:21.023"/>
+</kw>
+<kw name="Valida Tela Reset De Senha" library="ResetPage">
+<arg>${telaReset}</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>xpath://h2[@class="fadeIn"]</arg>
+<arg>timeout=01:30</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231125 19:43:21.025" endtime="20231125 19:43:24.078"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath://h2[@class="fadeIn"]</arg>
+<arg>${ResetSenha}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231125 19:43:24.079" level="INFO">Verifying element 'xpath://h2[@class="fadeIn"]' contains exact text 'Recuperação de senha'.</msg>
+<status status="PASS" starttime="20231125 19:43:24.078" endtime="20231125 19:43:26.100"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:21.024" endtime="20231125 19:43:26.100"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:13.891" endtime="20231125 19:43:26.100"/>
+</kw>
+<kw name="Quando informar meu usuario" library="LoginResource">
+<kw name="Digita Usuario Reset" library="ResetPage">
+<arg>${userReset}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:recovery_user</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231125 19:43:26.102" level="INFO">Typing text 'teste' into text field 'id:recovery_user'.</msg>
+<status status="PASS" starttime="20231125 19:43:26.101" endtime="20231125 19:43:29.259"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:26.101" endtime="20231125 19:43:29.259"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:26.100" endtime="20231125 19:43:29.259"/>
+</kw>
+<kw name="E selecionar envio via sms" library="LoginResource">
+<kw name="Envia Senha Por SMS" library="ResetPage">
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>id:recoveryType_1-label</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231125 19:43:29.260" endtime="20231125 19:43:32.309"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:29.260" endtime="20231125 19:43:32.309"/>
+</kw>
+<kw name="Btn Enviar" library="ResetPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://div[@class="full-container"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231125 19:43:32.310" level="INFO">Clicking element 'xpath://div[@class="full-container"]'.</msg>
+<status status="PASS" starttime="20231125 19:43:32.309" endtime="20231125 19:43:34.373"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:32.309" endtime="20231125 19:43:34.373"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:29.259" endtime="20231125 19:43:34.373"/>
+</kw>
+<kw name="Entao nova senha sera enviada" library="LoginResource">
+<kw name="Valida Envio senha" library="ResetPage">
+<arg>${envioSenha}</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>xpath://p[@class]</arg>
+<arg>timeout=01:30</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231125 19:43:34.374" endtime="20231125 19:43:37.418"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath://p[@class]</arg>
+<arg>${envioSenha}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231125 19:43:37.420" level="INFO">Verifying element 'xpath://p[@class]' contains exact text 'Nova senha enviada, verifique se recebeu o E-mail/SMS!'.</msg>
+<status status="PASS" starttime="20231125 19:43:37.419" endtime="20231125 19:43:39.443"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:34.374" endtime="20231125 19:43:39.443"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:34.374" endtime="20231125 19:43:39.443"/>
+</kw>
+<kw name="Fechar Clinicorp" library="environment" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231125 19:43:39.443" endtime="20231125 19:43:40.509"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:39.443" endtime="20231125 19:43:40.509"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:07.216" endtime="20231125 19:43:40.509"/>
+</test>
+<test id="s1-t7" name="Cenario: Sair da tela de reset da senha" line="40">
+<kw name="Abrir Clinicorp" library="environment" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231125 19:43:40.513" level="INFO">Opening browser 'Chrome' to base url 'https://sistema.clinicorp.com/login/'.</msg>
+<status status="PASS" starttime="20231125 19:43:40.512" endtime="20231125 19:43:46.049"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231125 19:43:46.050" endtime="20231125 19:43:47.461"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231125 19:43:47.461" endtime="20231125 19:43:47.462"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:40.512" endtime="20231125 19:43:47.462"/>
+</kw>
+<kw name="Dado que esqueci minha senha" library="LoginResource">
+<kw name="Valida Tela Login" library="LoginPage">
+<arg>${telaLogin}</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>xpath://div[@class="login__welcome-message"]//p</arg>
+<arg>timeout=01:30</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231125 19:43:47.463" endtime="20231125 19:43:50.510"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath://div[@class="login__welcome-message"]//p</arg>
+<arg>${telaLogin}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231125 19:43:50.513" level="INFO">Verifying element 'xpath://div[@class="login__welcome-message"]//p' contains exact text 'Seja bem-vindo(a)'.</msg>
+<status status="PASS" starttime="20231125 19:43:50.510" endtime="20231125 19:43:52.546"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:47.462" endtime="20231125 19:43:52.546"/>
+</kw>
+<kw name="Btn Esqueci Minha Senha" library="ResetPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://a[@class="login__link-button"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231125 19:43:52.547" level="INFO">Clicking element 'xpath://a[@class="login__link-button"]'.</msg>
+<status status="PASS" starttime="20231125 19:43:52.547" endtime="20231125 19:43:54.612"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:52.546" endtime="20231125 19:43:54.612"/>
+</kw>
+<kw name="Valida Tela Reset De Senha" library="ResetPage">
+<arg>${telaReset}</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>xpath://h2[@class="fadeIn"]</arg>
+<arg>timeout=01:30</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231125 19:43:54.613" endtime="20231125 19:43:57.667"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath://h2[@class="fadeIn"]</arg>
+<arg>${ResetSenha}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231125 19:43:57.668" level="INFO">Verifying element 'xpath://h2[@class="fadeIn"]' contains exact text 'Recuperação de senha'.</msg>
+<status status="PASS" starttime="20231125 19:43:57.667" endtime="20231125 19:43:59.685"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:54.612" endtime="20231125 19:43:59.685"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:47.462" endtime="20231125 19:43:59.685"/>
+</kw>
+<kw name="Quando selecionar o botao para voltar a tela de login" library="LoginResource">
+<kw name="Btn Voltar Login" library="ResetPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://a[@class="login__link-button"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231125 19:43:59.687" level="INFO">Clicking element 'xpath://a[@class="login__link-button"]'.</msg>
+<status status="PASS" starttime="20231125 19:43:59.687" endtime="20231125 19:44:01.732"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:59.686" endtime="20231125 19:44:01.732"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:59.685" endtime="20231125 19:44:01.732"/>
+</kw>
+<kw name="Entao será exibido a tela inicial novamente" library="LoginResource">
+<kw name="Valida Tela Login" library="LoginPage">
+<arg>${telaLogin}</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>xpath://div[@class="login__welcome-message"]//p</arg>
+<arg>timeout=01:30</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231125 19:44:01.734" endtime="20231125 19:44:04.769"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath://div[@class="login__welcome-message"]//p</arg>
+<arg>${telaLogin}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231125 19:44:04.771" level="INFO">Verifying element 'xpath://div[@class="login__welcome-message"]//p' contains exact text 'Seja bem-vindo(a)'.</msg>
+<status status="PASS" starttime="20231125 19:44:04.770" endtime="20231125 19:44:06.793"/>
+</kw>
+<status status="PASS" starttime="20231125 19:44:01.733" endtime="20231125 19:44:06.793"/>
+</kw>
+<status status="PASS" starttime="20231125 19:44:01.733" endtime="20231125 19:44:06.793"/>
+</kw>
+<kw name="Fechar Clinicorp" library="environment" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231125 19:44:06.793" endtime="20231125 19:44:07.862"/>
+</kw>
+<status status="PASS" starttime="20231125 19:44:06.793" endtime="20231125 19:44:07.862"/>
+</kw>
+<status status="PASS" starttime="20231125 19:43:40.512" endtime="20231125 19:44:07.863"/>
+</test>
+<status status="PASS" starttime="20231125 19:40:49.042" endtime="20231125 19:44:07.865"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="7" fail="0" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
